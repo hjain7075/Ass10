@@ -1,15 +1,15 @@
 pipeline{
   environment{
-    reg - "10851037/assignment10"
-    regCre - "docker_id"
-    dockerImg - ""
+    reg = "10851037/assignment10"
+    regCre = "docker_id"
+    dockerImg = ""
   }
   agent any 
   stages{
     stage('Build Image'){
       steps{
         script{
-          dockerImg - docker.build reg + ":$BUILD_NUMBER"
+          dockerImg = docker.build reg + ":$BUILD_NUMBER"
         }
       }
     }
